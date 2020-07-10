@@ -9,34 +9,26 @@ console.log(users)
 const main = document.querySelector('main')
 
 
-// function printKata(kataNumber, object) {
-//     // For the usage of the DETAILS and SUMMARY tags
-//     // in HTML, see: http://mdn.io/details-element
-//     const detailsElement = document.createElement('details')
-//     main.append(detailsElement)
-//     //
-//     const summaryElement = document.createElement('summary')
-//     summaryElement.append("KATA " + kataNumber)
-//     detailsElement.append(summaryElement)
-//     //
-//     // http://mdn.io/json.stringify
-//     const stringifiedObject = JSON.stringify(object)
-//     detailsElement.append(stringifiedObject)
-// }
+function printKata(kataNumber, object) {
+    // For the usage of the DETAILS and SUMMARY tags
+    // in HTML, see: http://mdn.io/details-element
+    const detailsElement = document.createElement('details')
+    main.append(detailsElement)
+    //
+    const summaryElement = document.createElement('summary')
+    summaryElement.append("KATA " + kataNumber)
+    detailsElement.append(summaryElement)
+    //
+    // http://mdn.io/json.stringify
+    const stringifiedObject = JSON.stringify(object)
+    detailsElement.append(stringifiedObject)
+}
 
 // Kata 1: Use the.filter() method
 // Filter the users array to show only the users with an isActive property of true.
 const isActive = users.filter(user => user.isActive === "true")
+
 printKata(1, isActive)
-function printKata(1, isActive) {
-    const detailsElement = document.createElement('details')
-    main.append(detailsElement)
-    const summaryElement = document.createElement('summary')
-    summaryElement.append("KATA " + kataNumber)
-    detailsElement.append(summaryElement)
-    const stringifiedObject = JSON.stringify(object)
-    detailsElement.append(stringifiedObject)
-}
 
 //     Kata 2: Use the.map() method
 // Map over the users array to show only the email addresses of the users.
