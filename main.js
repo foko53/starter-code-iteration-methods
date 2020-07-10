@@ -26,15 +26,15 @@ function printKata(kataNumber, object) {
 
 // Kata 1: Use the.filter() method
 // Filter the users array to show only the users with an isActive property of true.
-const isActive = users.filter(user => user.isActive === "true")
+const isActive = users.filter(user => user.isActive === true)
 
 printKata(1, isActive)
 
 //     Kata 2: Use the.map() method
 // Map over the users array to show only the email addresses of the users.
-const emailAddress = users.map(user => user.emailAddress === "email")
+const email = users.map(user => user.email)
 
-printKata(2, emailAddress)
+printKata(2, email)
 
 //     Kata 3: Use the.some() method
 // Check whether at least one user in the users array has a company property of "OVATION".
@@ -44,7 +44,7 @@ printKata(3, Owner)
 
 //     Kata 4: Use the.find() method
 // Find the first user in the array over the age of 38.
-const age = users.find(user => user.firstuser > 38)
+const age = users.find(user => user.age > 38)
 
 printKata(4, age)
 
@@ -52,24 +52,23 @@ printKata(4, age)
 // Find the first user in the array over the age of 38 who is active.
 const firstActiveOver38 = users
     .filter(user => user.isActive)
-    .find(user => user.firstuser > 38)
+    .find(user => user.age > 38)
 
 printKata(5, firstActiveOver38)
 
 //     Kata 6: Use the.filter() and.map() methods
 // Show the balance of every user in the array from the "ZENCO" company.
 const balance = users
-    .filter(user => user.balance)
-    .map(user => user.company === "ZENCO")
+    .filter(user => user.company === "ZENCO")
+    .map(user => user.balance)
 
 printKata(6, balance)
 
 //     Kata 7: Use the.filter() method with .includes() and the.map() method
 // Show the age of every user with the "fugiat" tag.
 const userage = users
-    .filter(user => user.age)
-    .map(user => user.tag === users)
-    .includes(user => user.userage === "fugiat")
+    .filter(user => user.tags.includes('fugiat'))
+    .map(user => user.age)
 
 
 printKata(7, userage)
